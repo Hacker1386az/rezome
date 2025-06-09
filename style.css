@@ -1,0 +1,195 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tahoma', sans-serif;
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+    color: #1e293b;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    border-radius: 12px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #6366f1;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    z-index: 1000;
+    transition: background-color 0.4s ease;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+header.scrolled {
+    background-color: #4f46e5;
+    color: white;
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.7);
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #4338ca;
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: color 0.4s ease;
+}
+
+header.scrolled h1 {
+    color: #e0e7ff;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #475569;
+    margin: 5px 0;
+    transition: color 0.4s ease;
+}
+
+header.scrolled p {
+    color: #c7d2fe;
+}
+
+a {
+    color: #4f46e5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4338ca;
+    text-decoration: underline;
+}
+
+main section {
+    background-color: #f8fafccc;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation-fill-mode: forwards;
+}
+
+main section.visible {
+    animation-name: fadeSlideIn;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+}
+
+main section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+main section h2 {
+    font-size: 2rem;
+    color: #4338ca;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #6366f1;
+    padding-bottom: 8px;
+    font-weight: 700;
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #34495e;
+    font-size: 1.1rem;
+}
+
+/* Skill bars container */
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    background-color: #e0e7ff;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 18px;
+}
+
+.skill-level {
+    height: 100%;
+    background-color: #4f46e5;
+    width: 0;
+    border-radius: 10px;
+    animation-fill-mode: forwards;
+}
+
+/* Project items hover effect */
+#projects ol li {
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#projects ol li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(41, 128, 185, 0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    main section {
+        padding: 20px 15px;
+    }
+}
